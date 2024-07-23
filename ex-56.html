@@ -1,0 +1,66 @@
+<!-- یک تابع بازگشتی بنویسید اگر عضو اول ارایه بزگترین نبود حذف کنه تا آخر -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        div {
+            background-color: azure;
+            border: 1px dotted navy;
+            width: 30%;
+            padding: 2%;
+            margin-left: 35%;
+            margin-top: 30vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <p>my array is number = [10, 120, 20, 80, 120, 30, 120, 40].</p>
+
+        <p onclick="maxNumber()">Display the largest member of the array</p>
+
+        <p id="demo"></p>
+
+    </div>
+
+
+    <script>
+
+        const number = [10, 120, 20, 80, 120, 30, 120, 40];
+
+        const max = Math.max(...number);
+        console.log(max);
+
+        function maxNumber() {
+            if (number.length && number.length > 1) {
+
+
+                if (number[0] !== max) {
+                    number.splice(0, 1)
+                }
+                else {
+
+                    number.splice(1, 1)
+                }
+                console.log(number)
+                maxNumber()
+
+            }
+
+            document.getElementById("demo").innerHTML = "The largest membar is " + number;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
